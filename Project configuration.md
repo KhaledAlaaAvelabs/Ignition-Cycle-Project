@@ -8,7 +8,7 @@ App_function.c : Implemntaion of calculation's functions.
 Prepherals used : UART0 , SSi0,(include Cnf pins SW1(F3).
 
 Note:
-When am making a separate driver for the external interrupt and ICU I find some issues with linking so I put all ISR and interrupt functions on main.c file cause of no time for debugging.
+When am making a separate driver for the ssi I find some issues with linking so I put all APIs of it on main.c file cause of no time for debugging.
 
 Very welcome for any queries ..
 
