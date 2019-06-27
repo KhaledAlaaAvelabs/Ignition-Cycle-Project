@@ -1,3 +1,6 @@
+
+#include "Adaptive.h"
+
 uint8_t CMD (uint8_t distance)
 {
     uint8_t x;
