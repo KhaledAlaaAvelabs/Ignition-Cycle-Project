@@ -3,30 +3,30 @@ uint8_t CMD (uint8_t distance)
     uint8_t x;
     if (distance >255 && distance <= 160)
     {
-        send_Uart(inc);
+        UARTSend(inc);
         x = inc;
     }
     else if (distance < 160 && distance >= 90)
     {
-        send_Uart(maintain);
+        UARTSend(maintain);
         x = maintain;
     }
     else if (distance < 90 && distance >=20)
     {
-        send_Uart(dec);
+        UARTSend(dec);
         x = dec;
     }
     else if (distance < 20 && distance >=5)
     {
-        send_Uart(brake);
+        UARTSend(brake);
         x = brake;
     }
     else if (distance < 5 && distance > 0)
     {
-        send_Uart(airbag);
+        UARTSend(airbag);
         x = airbag;
     }
-    send_Uart(distance);
+    UARTSend(distance);
     return x;
 }
 
@@ -39,27 +39,27 @@ void show_state (uint8_t currState, uint8_t distance)
     switch (currState)
     {
         case inc:
-            send_Uart("Increase Speed");            
+            UARTSend("Increase Speed");            
             break;
             
         case dec:
-            send_Uart("Decrease Speed");
+            UARTSend("Decrease Speed");
             break;
             
         case maintain:
-            send_Uart("Maintain Speed");
+            UARTSend("Maintain Speed");
             break;
         
         case brake:
-            send_Uart("Brake");
+            UARTSend("Brake");
             break;
             
         case airbag:
-            send_Uart("Airbag");
+            UARTSend("Airbag");
             break;
             
         default:
             break;
     }
-    send_Uart(distance);
+    UARTSend(distance);
 }
