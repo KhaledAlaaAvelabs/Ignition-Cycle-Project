@@ -1,6 +1,8 @@
 
 #include "Adaptive.h"
 
+enum state {ON =1, inc, dec, brake, maintain, airbag};
+
 uint8_t CMD (uint8_t distance)
 {
     uint8_t x;
